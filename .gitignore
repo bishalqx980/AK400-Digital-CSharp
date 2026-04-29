@@ -1,0 +1,54 @@
+# ==============================
+# Visual Studio / .NET
+# ==============================
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+publish/
+
+# Build configurations
+Debug/
+Release/
+
+# .NET publish artifacts
+**/publish/
+
+# Runtime generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# Rider / JetBrains
+.idea/
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# PublishProfiles (optional - keep if you want sharing)
+# Properties/PublishProfiles/
