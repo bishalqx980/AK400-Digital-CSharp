@@ -7,6 +7,10 @@ A lightweight, 20MB RAM, zero-installer C# script to control the LCD on DeepCool
 > The Problem: The official DeepCool software is a ~1GB installer that runs heavy background processes just to display two digits of data.
 The Solution: This ~5MB .exe file talks directly to the cooler via HID (Human Interface Device) protocol. No telemetry, no bloat, just data.
 
+## Screenshot
+
+![](./assets/app_screenshot.png)
+
 ## ✨ Features
 
 - Ultralight: Replaces 1GB of software with a tiny script.
