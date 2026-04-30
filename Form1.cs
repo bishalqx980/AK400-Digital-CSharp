@@ -11,6 +11,8 @@ namespace AK400_Digital
         const int INTERVAL = 2; // in seconds
         private System.Windows.Forms.Timer? timer;
 
+        bool allowExit = false;
+
         private HIDConnect? hid;
         private HardwareMonitor? hw;
 
@@ -19,6 +21,7 @@ namespace AK400_Digital
         {
             InitializeComponent();
             this.Load += Form1_Load;
+            this.FormClosing += Form1_Close;
         }
 
         private void Form1_Load(object? sender, EventArgs e)
@@ -94,6 +97,36 @@ namespace AK400_Digital
             show = "cpuTemp";
             MessageBox.Show("Display is now showing CPU temperature.");
 
+        }
+
+        private void Form1_Close(object? sender, FormClosingEventArgs e)
+        {
+            if (!allowExit)
+            {
+                e.Cancel = true;
+                this.Hide();
+                notifyIcon1.Visible = true;
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
+        }
+
+        private void toolStripMenuShow_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
+        }
+
+        private void toolStripMenuExit_Click(object sender, EventArgs e)
+        {
+            allowExit = true;
+            Application.Exit();
         }
     }
 }

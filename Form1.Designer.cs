@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             statusBar = new Label();
             label_cpuUsage = new Label();
@@ -40,9 +41,14 @@
             label_deviceInfo = new Label();
             label2 = new Label();
             groupBox3 = new GroupBox();
+            notifyIcon1 = new NotifyIcon(components);
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripMenuIShow = new ToolStripMenuItem();
+            toolStripMenuIExit = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // statusBar
@@ -153,6 +159,34 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Device Info";
             // 
+            // notifyIcon1
+            // 
+            notifyIcon1.ContextMenuStrip = contextMenuStrip1;
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "! AK400 Digital ";
+            notifyIcon1.Visible = true;
+            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuIShow, toolStripMenuIExit });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(104, 48);
+            // 
+            // toolStripMenuIShow
+            // 
+            toolStripMenuIShow.Name = "toolStripMenuIShow";
+            toolStripMenuIShow.Size = new Size(103, 22);
+            toolStripMenuIShow.Text = "Show";
+            toolStripMenuIShow.Click += toolStripMenuShow_Click;
+            // 
+            // toolStripMenuIExit
+            // 
+            toolStripMenuIExit.Name = "toolStripMenuIExit";
+            toolStripMenuIExit.Size = new Size(103, 22);
+            toolStripMenuIExit.Text = "Exit";
+            toolStripMenuIExit.Click += toolStripMenuExit_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -174,6 +208,7 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +226,9 @@
         private Label label2;
         private Label label_deviceInfo;
         private GroupBox groupBox3;
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem toolStripMenuIShow;
+        private ToolStripMenuItem toolStripMenuIExit;
     }
 }
