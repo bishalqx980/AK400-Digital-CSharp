@@ -7,6 +7,9 @@ A lightweight, 20MB RAM, zero-installer C# script to control the LCD on DeepCool
 > The Problem: The official DeepCool software is a ~1GB installer that runs heavy background processes just to display two digits of data.
 The Solution: This ~5MB .exe file talks directly to the cooler via HID (Human Interface Device) protocol. No telemetry, no bloat, just data.
 
+**[Download](https://github.com/bishalqx980/AK400-Digital-CSharp/releases) | [PawnIO](https://pawnio.eu/)**
+> Note: CPU temp won't show without **PawnIO**
+
 ## Screenshot
 
 ![](./assets/app_screenshot.png)
